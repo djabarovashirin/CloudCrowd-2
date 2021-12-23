@@ -1,0 +1,93 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_autoscaling_group.gogreen (expand)" [label = "aws_autoscaling_group.gogreen", shape = "box"]
+		"[root] aws_db_instance.default (expand)" [label = "aws_db_instance.default", shape = "box"]
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" [label = "aws_db_subnet_group.DBSubnetGroup", shape = "box"]
+		"[root] aws_eip.lb (expand)" [label = "aws_eip.lb", shape = "box"]
+		"[root] aws_instance.app (expand)" [label = "aws_instance.app", shape = "box"]
+		"[root] aws_instance.web (expand)" [label = "aws_instance.web", shape = "box"]
+		"[root] aws_internet_gateway.gw (expand)" [label = "aws_internet_gateway.gw", shape = "box"]
+		"[root] aws_launch_configuration.as_conf (expand)" [label = "aws_launch_configuration.as_conf", shape = "box"]
+		"[root] aws_lb.test (expand)" [label = "aws_lb.test", shape = "box"]
+		"[root] aws_nat_gateway.gogreen_ng (expand)" [label = "aws_nat_gateway.gogreen_ng", shape = "box"]
+		"[root] aws_s3_bucket.gogreens3 (expand)" [label = "aws_s3_bucket.gogreens3", shape = "box"]
+		"[root] aws_security_group.app-sg (expand)" [label = "aws_security_group.app-sg", shape = "box"]
+		"[root] aws_security_group.database-sg (expand)" [label = "aws_security_group.database-sg", shape = "box"]
+		"[root] aws_security_group.elb-sg (expand)" [label = "aws_security_group.elb-sg", shape = "box"]
+		"[root] aws_security_group.web-sg (expand)" [label = "aws_security_group.web-sg", shape = "box"]
+		"[root] aws_subnet.private1 (expand)" [label = "aws_subnet.private1", shape = "box"]
+		"[root] aws_subnet.private2 (expand)" [label = "aws_subnet.private2", shape = "box"]
+		"[root] aws_subnet.private3 (expand)" [label = "aws_subnet.private3", shape = "box"]
+		"[root] aws_subnet.private4 (expand)" [label = "aws_subnet.private4", shape = "box"]
+		"[root] aws_subnet.private5 (expand)" [label = "aws_subnet.private5", shape = "box"]
+		"[root] aws_subnet.private6 (expand)" [label = "aws_subnet.private6", shape = "box"]
+		"[root] aws_subnet.public1 (expand)" [label = "aws_subnet.public1", shape = "box"]
+		"[root] aws_subnet.public2 (expand)" [label = "aws_subnet.public2", shape = "box"]
+		"[root] aws_vpc.test (expand)" [label = "aws_vpc.test", shape = "box"]
+		"[root] data.aws_ami.app_ami (expand)" [label = "data.aws_ami.app_ami", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] aws_autoscaling_group.gogreen (expand)" -> "[root] aws_launch_configuration.as_conf (expand)"
+		"[root] aws_autoscaling_group.gogreen (expand)" -> "[root] aws_subnet.private1 (expand)"
+		"[root] aws_autoscaling_group.gogreen (expand)" -> "[root] aws_subnet.private2 (expand)"
+		"[root] aws_db_instance.default (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" -> "[root] aws_subnet.private5 (expand)"
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" -> "[root] aws_subnet.private6 (expand)"
+		"[root] aws_eip.lb (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_instance.app (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_instance.web (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_internet_gateway.gw (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_launch_configuration.as_conf (expand)" -> "[root] data.aws_ami.app_ami (expand)"
+		"[root] aws_lb.test (expand)" -> "[root] aws_security_group.elb-sg (expand)"
+		"[root] aws_nat_gateway.gogreen_ng (expand)" -> "[root] aws_eip.lb (expand)"
+		"[root] aws_nat_gateway.gogreen_ng (expand)" -> "[root] aws_internet_gateway.gw (expand)"
+		"[root] aws_nat_gateway.gogreen_ng (expand)" -> "[root] aws_subnet.public1 (expand)"
+		"[root] aws_s3_bucket.gogreens3 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_security_group.app-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_security_group.database-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_security_group.elb-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_security_group.web-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private1 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private2 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private3 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private4 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private5 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private6 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.public1 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.public2 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_vpc.test (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_ami.app_ami (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_autoscaling_group.gogreen (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_db_instance.default (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_db_subnet_group.DBSubnetGroup (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_instance.app (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_instance.web (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_lb.test (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_nat_gateway.gogreen_ng (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_s3_bucket.gogreens3 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group.app-sg (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group.database-sg (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_security_group.web-sg (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_subnet.private3 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_subnet.private4 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_subnet.public2 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_autoscaling_group.gogreen (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_db_instance.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_db_subnet_group.DBSubnetGroup (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.app (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_instance.web (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_lb.test (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_nat_gateway.gogreen_ng (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket.gogreens3 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group.app-sg (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group.database-sg (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_security_group.web-sg (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.private3 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.private4 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.public2 (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
