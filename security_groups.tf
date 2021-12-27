@@ -34,7 +34,7 @@ resource "aws_security_group" "web-sg" {
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  #we need to create ELB and include the cidr range
+    #we need to create ELB and include the cidr range
   }
 
   egress {
@@ -42,7 +42,7 @@ resource "aws_security_group" "web-sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-  #Outbound Rule: only connects to the App tier - we need App Tier Cidr
+    #Outbound Rule: only connects to the App tier - we need App Tier Cidr
   }
 
   tags = {
@@ -61,7 +61,7 @@ resource "aws_security_group" "app-sg" {
     to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  #we need to connect to Web
+    #we need to connect to Web
   }
 
   egress {
@@ -69,7 +69,7 @@ resource "aws_security_group" "app-sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-  #Outbound Rule: only connects to the DB tier - we need App Tier Cidr
+    #Outbound Rule: only connects to the DB tier - we need App Tier Cidr
   }
 
   tags = {
@@ -88,10 +88,29 @@ resource "aws_security_group" "database-sg" {
     to_port     = 3306
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  #we need the app tier IP 
+    #we need the app tier IP 
   }
 
   tags = {
     Name = "database-sg"
+  }
+}
+
+resource "aws_security_group" "bastion-sg" {
+  name        = "bastion-sg"
+  description = "Allow Access at Port 22"
+  vpc_id      = aws_vpc.test.id
+
+  ingress {
+    description = "Traffic from ELB "
+    from_port   = 22
+    to_port     = 22
+    protocol    = "ssh"
+    cidr_blocks = ["0.0.0.0/0"]
+
+  }
+
+  tags = {
+    Name = "bastion-sg"
   }
 }
