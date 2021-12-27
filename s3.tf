@@ -2,7 +2,7 @@ resource "aws_s3_bucket" "gogreens3" {
   bucket = "GoGreens3"
   acl    = "private"
 
-   lifecycle_rule {
+  lifecycle_rule {
     id      = "log"
     enabled = true
 
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "gogreens3" {
       rule      = "log"
       autoclean = "true"
     }
-    
+
     transition {
       days          = 90
       storage_class = "GLACIER"
