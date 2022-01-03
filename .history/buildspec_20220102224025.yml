@@ -4,13 +4,13 @@ phases:
   install: 
     runtime-versions: 
       -python: 3.7 
-      -docker:
+      -httpd:
+      -php-mysql:
   build: 
     commands: 
       - echo Compiling has started 
       - echo Compiling the PHP code... 
       - python HelloWorld.py 
-      - cat "userdata.txt"
   post_build: 
     commands: 
       - echo Compiling process has been completed 
