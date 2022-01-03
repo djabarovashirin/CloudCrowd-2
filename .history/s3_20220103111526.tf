@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "gogreens3" {
-  bucket = "gogreens3-cloudcrowd"
+  bucket = "gogreens3"
   acl    = "private"
 
   lifecycle_rule {

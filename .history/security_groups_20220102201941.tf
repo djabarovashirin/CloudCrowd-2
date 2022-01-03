@@ -99,13 +99,13 @@ resource "aws_security_group" "database-sg" {
 resource "aws_security_group" "bastion-sg" {
   name        = "bastion-sg"
   description = "Allow Access at Port 22"
-  vpc_id      = var.vpc_cidr
+  vpc_id      = aws_vpc.test.id
 
   ingress {
     description = "Traffic from ELB "
     from_port   = 22
     to_port     = 22
-    protocol    = "tcp"
+    protocol    = "ssh"
     cidr_blocks = ["0.0.0.0/0"]
 
   }

@@ -11,5 +11,5 @@ resource "aws_launch_configuration" "as_conf" {
   name          = "web_config"
   image_id      = data.aws_ami.app_ami.id
   instance_type = var.instance_type
-  user_data = "userdata.txt"
+  user_data     = "userdata.txt"
 }

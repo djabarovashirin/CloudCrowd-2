@@ -9,6 +9,6 @@ resource "aws_db_instance" "default" {
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
   multi_az             = true
-  iops                 = 1
+  storage_type         = io1
   db_subnet_group_name = aws_db_subnet_group.DBSubnetGroup.name
 }
