@@ -11,7 +11,7 @@ resource "aws_subnet" "public1" {
 
 resource "aws_subnet" "public2" {
   vpc_id                  = aws_vpc.test.id
-  cidr_block              = var.subnet_cidrs.public2
+  cidr_block              = var.subnet_cidrs
   availability_zone       = "us-west-1b"
   map_public_ip_on_launch = true
 

@@ -12,8 +12,8 @@ resource "aws_instance" "app" {
 }
 
 resource "aws_instance" "app1" {
-  ami                  = var.ami
-  instance_type        = var.instance_type
+  ami                  = "0ed9277fb7eb570c9"
+  instance_type        = "r3.2xlarge"
   count                = 4
   security_groups      = ["${aws_security_group.app-sg.id}"]
   subnet_id            = "aws_subnet.private5.id"

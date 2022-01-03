@@ -13,7 +13,7 @@ resource "aws_route_table" "public-rt" {
 
 resource "aws_route_table_association" "pub-sub1-rta" {
   subnet_id      = aws_subnet.public1.id
-  route_table_id = aws_route_table.public-rt.id
+  route_table_id = aws_route_table.public-rt
 }
 resource "aws_route_table_association" "pub-sub2-rta" {
   subnet_id      = aws_subnet.public2.id

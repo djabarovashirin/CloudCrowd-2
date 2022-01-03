@@ -1,11 +1,11 @@
 resource "aws_db_instance" "default" {
   allocated_storage    = 32
-  engine               = var.engine
-  engine_version       = var.engine_version
-  instance_class       = var.db_instance_class
+  engine               = "mysql"
+  engine_version       = "5.7.22"
+  instance_class       = "db.r3.2xlarge"
   name                 = "mydb"
   username             = "dbadmin"
-  password             = "dbpassword.txt"
+  password             = "12345"
   parameter_group_name = "default.mysql5.7"
   skip_final_snapshot  = true
   multi_az             = true
