@@ -12,5 +12,4 @@ hooks:
       runas: root
     ApplicationStart:
     - location: userdata.sh
-      runas: root
 
