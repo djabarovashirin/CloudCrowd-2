@@ -1,5 +1,5 @@
 resource "aws_subnet" "private1" {
-  vpc_id                  = var.vpc_cidr
+  vpc_id                  = aws_vpc.test.id
   cidr_block              = var.subnet_cidrs.private1
   availability_zone       = "us-west-1a"
   map_public_ip_on_launch = false
@@ -11,7 +11,7 @@ resource "aws_subnet" "private1" {
 
 }
 resource "aws_subnet" "private2" {
-  vpc_id                  = var.vpc_cidr
+  vpc_id                  = aws_vpc.test.id
   cidr_block              = var.subnet_cidrs.private2
   availability_zone       = "us-west-1a"
   map_public_ip_on_launch = false
@@ -23,9 +23,9 @@ resource "aws_subnet" "private2" {
 
 
 resource "aws_subnet" "private3" {
-  vpc_id                  = var.vpc_cidr
+  vpc_id                  = aws_vpc.test.id
   cidr_block              = var.subnet_cidrs.private3
-  availability_zone       = "us-west-1a"
+  availability_zone       = "us-west-1b"
   map_public_ip_on_launch = false
 
   tags = {
@@ -34,7 +34,7 @@ resource "aws_subnet" "private3" {
 }
 
 resource "aws_subnet" "private4" {
-  vpc_id                  = var.vpc_cidr
+  vpc_id                  = aws_vpc.test.id
   cidr_block              = var.subnet_cidrs.private4
   availability_zone       = "us-west-1b"
   map_public_ip_on_launch = false
@@ -45,7 +45,7 @@ resource "aws_subnet" "private4" {
 }
 
 resource "aws_subnet" "private5" {
-  vpc_id                  = var.vpc_cidr
+  vpc_id                  = aws_vpc.test.id
   cidr_block              = var.subnet_cidrs.private5
   availability_zone       = "us-west-1b"
   map_public_ip_on_launch = false
@@ -56,7 +56,7 @@ resource "aws_subnet" "private5" {
 }
 
 resource "aws_subnet" "private6" {
-  vpc_id                  = var.vpc_cidr
+  vpc_id                  = aws_vpc.test.id
   cidr_block              = var.subnet_cidrs.private6
   availability_zone       = "us-west-1b"
   map_public_ip_on_launch = false
