@@ -1,3 +1,5 @@
+
+##########APP LOAD BALANCER SG
 resource "aws_security_group" "elb-sg" {
   name        = "elb-sg"
   description = "Allow Access to ELB from Anywhere"
@@ -23,9 +25,10 @@ resource "aws_security_group" "elb-sg" {
   }
 }
 
+#############EC2 SG
 resource "aws_security_group" "web-sg" {
   name        = "web-sg"
-  description = "Allow Access at for ELB"
+  description = "Allow Access for ELB"
   vpc_id      = aws_vpc.test.id
 
   ingress {
@@ -42,41 +45,14 @@ resource "aws_security_group" "web-sg" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
-    #Outbound Rule: only connects to the App tier - we need App Tier Cidr
+   
   }
 
   tags = {
     Name = "ec2-web-sg"
   }
 }
-
-# resource "aws_security_group" "app-sg" {
-#   name        = "app-sg"
-#   description = "Allow Access at Port 8080"
-#   vpc_id      = aws_vpc.test.id
-
-#   ingress {
-#     description = "Traffic to the web server"
-#     from_port   = 8080
-#     to_port     = 8080
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-#     #we need to connect to Web
-#   }
-
-#   egress {
-#     from_port   = 0
-#     to_port     = 0
-#     protocol    = "-1"
-#     cidr_blocks = ["0.0.0.0/0"]
-#     #Outbound Rule: only connects to the DB tier - we need App Tier Cidr
-#   }
-
-#   tags = {
-#     Name = "app-sg"
-#   }
-# }
-
+#########RDS SG
 resource "aws_security_group" "database-sg" {
   name        = "database-sg"
   description = "Allow Access at Port 3306"
@@ -84,33 +60,21 @@ resource "aws_security_group" "database-sg" {
 
   ingress {
     description = "Traffic from the app tier"
-    from_port   = 80
-    to_port     = 80
+    from_port   = 3306
+    to_port     = 3306
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     #we need the app tier IP 
+  }
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    
   }
 
   tags = {
     Name = "database-sg"
   }
 }
-
-# resource "aws_security_group" "bastion-sg" {
-#   name        = "bastion-sg"
-#   description = "Allow Access at Port 22"
-#   vpc_id      = aws_vpc.test.id
-
-#   ingress {
-#     description = "Traffic from ELB "
-#     from_port   = 22
-#     to_port     = 22
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-
-#   }
-
-#   tags = {
-#     Name = "bastion-sg"
-#   }
-# }

@@ -3,7 +3,7 @@ instance_type = "t2.micro"
 ami           = "ami-03af6a70ccd8cb578"
 
 
-db_instance_class = "db.r3.2xlarge"
+db_instance_class = "db.t2.micro"
 engine            = "mysql"
 engine_version    = "5.7.22"
 vpc_cidr          = "10.0.0.0/16"
@@ -19,10 +19,19 @@ subnet_cidrs = {
   private6 = "10.0.8.0/24"
 }
 
-team-emails {
+team-emails = {
 
 Shirin = "djaborovashirin@gmail.com"
 fatih = "durmazfa@gmail.com"
 Sadulla = "sadullauk@gmail.com"
+Gamze= "gamzcyln@gmail.com"
+
+}
+
+team-phones = {
+  
+
+fatih = "4122972028"
+
 
 }

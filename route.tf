@@ -1,3 +1,5 @@
+
+#PUBLIC ROUTE TABLES
 resource "aws_route_table" "public-rt" {
   vpc_id = aws_vpc.test.id
 
@@ -21,7 +23,7 @@ resource "aws_route_table_association" "pub-sub2-rta" {
 }
 
 
-
+#PRIVATE ROUTE TABLES BELOW
 
 
 resource "aws_route_table" "ng-rt" {

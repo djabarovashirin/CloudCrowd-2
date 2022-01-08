@@ -26,6 +26,3 @@ variable "engine_version" {
 
 }
 
-variable "team-emails" {
-  type = map(string)
-}

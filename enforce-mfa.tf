@@ -1,6 +1,6 @@
 # module enforce_mfa1 {
 #   source  = "terraform-module/enforce-mfa/aws"
-#   version = "0.12.0"
+
 
 #   policy_name                     = "managed-mfa-enforce"
 #   #account_id                      = data.aws_caller_identity.current.id
@@ -9,7 +9,7 @@
 
 # module enforce_mfa2 {
 #   source  = "terraform-module/enforce-mfa/aws"
-#   #version = "0.12.0"
+  
 
 #   policy_name                     = "managed-mfa-enforce"
 #   #account_id                      = data.aws_caller_identity.current.id
@@ -18,7 +18,7 @@
 
 # module enforce_mfa3 {
 #   source  = "terraform-module/enforce-mfa/aws"
-#   #version = "0.12.0"
+  
 
 #   policy_name                     = "managed-mfa-enforce"
 #   #account_id                      = data.aws_caller_identity.current.id
