@@ -21,17 +21,17 @@ subnet_cidrs = {
 
 team-emails = {
 
-Shirin = "djaborovashirin@gmail.com"
-fatih = "durmazfa@gmail.com"
-Sadulla = "sadullauk@gmail.com"
-Gamze= "gamzcyln@gmail.com"
+  Shirin  = "djaborovashirin@gmail.com"
+  fatih   = "durmazfa@gmail.com"
+  Sadulla = "sadullauk@gmail.com"
+  Gamze   = "gamzcyln@gmail.com"
 
 }
 
 team-phones = {
-  
 
-fatih = "4122972028"
+
+  fatih = "4122972028"
 
 
 }

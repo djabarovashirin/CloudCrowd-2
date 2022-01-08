@@ -18,7 +18,7 @@ resource "aws_cloudfront_distribution" "my_distribution" {
   enabled         = true
   is_ipv6_enabled = true
   comment         = "my-cloudfront-distribution"
-  aliases = ["cloudcrowd.org"]
+  aliases         = ["cloudcrowd.org"]
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     cached_methods   = ["GET", "HEAD"]

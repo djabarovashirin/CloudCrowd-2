@@ -1,0 +1,219 @@
+digraph {
+	compound = "true"
+	newrank = "true"
+	subgraph "root" {
+		"[root] aws_autoscaling_attachment.gogreen (expand)" [label = "aws_autoscaling_attachment.gogreen", shape = "box"]
+		"[root] aws_autoscaling_group.gogreen (expand)" [label = "aws_autoscaling_group.gogreen", shape = "box"]
+		"[root] aws_cloudfront_distribution.my_distribution (expand)" [label = "aws_cloudfront_distribution.my_distribution", shape = "box"]
+		"[root] aws_cloudwatch_metric_alarm.CPU-alarm (expand)" [label = "aws_cloudwatch_metric_alarm.CPU-alarm", shape = "box"]
+		"[root] aws_db_instance.default (expand)" [label = "aws_db_instance.default", shape = "box"]
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" [label = "aws_db_subnet_group.DBSubnetGroup", shape = "box"]
+		"[root] aws_eip.lb (expand)" [label = "aws_eip.lb", shape = "box"]
+		"[root] aws_iam_access_key.dbadmin1 (expand)" [label = "aws_iam_access_key.dbadmin1", shape = "box"]
+		"[root] aws_iam_access_key.dbadmin2 (expand)" [label = "aws_iam_access_key.dbadmin2", shape = "box"]
+		"[root] aws_iam_access_key.sysadmin1 (expand)" [label = "aws_iam_access_key.sysadmin1", shape = "box"]
+		"[root] aws_iam_access_key.sysadmin2 (expand)" [label = "aws_iam_access_key.sysadmin2", shape = "box"]
+		"[root] aws_iam_account_password_policy.strict (expand)" [label = "aws_iam_account_password_policy.strict", shape = "box"]
+		"[root] aws_iam_group.DBAdmin (expand)" [label = "aws_iam_group.DBAdmin", shape = "box"]
+		"[root] aws_iam_group.Monitor (expand)" [label = "aws_iam_group.Monitor", shape = "box"]
+		"[root] aws_iam_group.SysAdmin (expand)" [label = "aws_iam_group.SysAdmin", shape = "box"]
+		"[root] aws_iam_group_policy.DBAdmin (expand)" [label = "aws_iam_group_policy.DBAdmin", shape = "box"]
+		"[root] aws_iam_group_policy.SysAdmin (expand)" [label = "aws_iam_group_policy.SysAdmin", shape = "box"]
+		"[root] aws_iam_instance_profile.s3_profile (expand)" [label = "aws_iam_instance_profile.s3_profile", shape = "box"]
+		"[root] aws_iam_role.s3access_role (expand)" [label = "aws_iam_role.s3access_role", shape = "box"]
+		"[root] aws_iam_role_policy.s3_policy (expand)" [label = "aws_iam_role_policy.s3_policy", shape = "box"]
+		"[root] aws_iam_user.dbadmin1 (expand)" [label = "aws_iam_user.dbadmin1", shape = "box"]
+		"[root] aws_iam_user.dbadmin2 (expand)" [label = "aws_iam_user.dbadmin2", shape = "box"]
+		"[root] aws_iam_user.monitoruser1 (expand)" [label = "aws_iam_user.monitoruser1", shape = "box"]
+		"[root] aws_iam_user.monitoruser2 (expand)" [label = "aws_iam_user.monitoruser2", shape = "box"]
+		"[root] aws_iam_user.monitoruser3 (expand)" [label = "aws_iam_user.monitoruser3", shape = "box"]
+		"[root] aws_iam_user.monitoruser4 (expand)" [label = "aws_iam_user.monitoruser4", shape = "box"]
+		"[root] aws_iam_user.sysadmin1 (expand)" [label = "aws_iam_user.sysadmin1", shape = "box"]
+		"[root] aws_iam_user.sysadmin2 (expand)" [label = "aws_iam_user.sysadmin2", shape = "box"]
+		"[root] aws_internet_gateway.gw (expand)" [label = "aws_internet_gateway.gw", shape = "box"]
+		"[root] aws_launch_template.greenLT (expand)" [label = "aws_launch_template.greenLT", shape = "box"]
+		"[root] aws_lb.test (expand)" [label = "aws_lb.test", shape = "box"]
+		"[root] aws_lb_listener.front_end (expand)" [label = "aws_lb_listener.front_end", shape = "box"]
+		"[root] aws_lb_target_group.test (expand)" [label = "aws_lb_target_group.test", shape = "box"]
+		"[root] aws_nat_gateway.gogreen_ng (expand)" [label = "aws_nat_gateway.gogreen_ng", shape = "box"]
+		"[root] aws_route_table.ng-rt (expand)" [label = "aws_route_table.ng-rt", shape = "box"]
+		"[root] aws_route_table.public-rt (expand)" [label = "aws_route_table.public-rt", shape = "box"]
+		"[root] aws_route_table_association.ngw-rt-as (expand)" [label = "aws_route_table_association.ngw-rt-as", shape = "box"]
+		"[root] aws_route_table_association.ngw-rt-as2 (expand)" [label = "aws_route_table_association.ngw-rt-as2", shape = "box"]
+		"[root] aws_route_table_association.pub-sub1-rta (expand)" [label = "aws_route_table_association.pub-sub1-rta", shape = "box"]
+		"[root] aws_route_table_association.pub-sub2-rta (expand)" [label = "aws_route_table_association.pub-sub2-rta", shape = "box"]
+		"[root] aws_s3_bucket.gogreens3 (expand)" [label = "aws_s3_bucket.gogreens3", shape = "box"]
+		"[root] aws_security_group.database-sg (expand)" [label = "aws_security_group.database-sg", shape = "box"]
+		"[root] aws_security_group.elb-sg (expand)" [label = "aws_security_group.elb-sg", shape = "box"]
+		"[root] aws_security_group.web-sg (expand)" [label = "aws_security_group.web-sg", shape = "box"]
+		"[root] aws_sns_topic.CPU-SMS-EMAIL (expand)" [label = "aws_sns_topic.CPU-SMS-EMAIL", shape = "box"]
+		"[root] aws_sns_topic_subscription.cpu-email (expand)" [label = "aws_sns_topic_subscription.cpu-email", shape = "box"]
+		"[root] aws_sns_topic_subscription.cpu-sms (expand)" [label = "aws_sns_topic_subscription.cpu-sms", shape = "box"]
+		"[root] aws_subnet.private1 (expand)" [label = "aws_subnet.private1", shape = "box"]
+		"[root] aws_subnet.private2 (expand)" [label = "aws_subnet.private2", shape = "box"]
+		"[root] aws_subnet.private3 (expand)" [label = "aws_subnet.private3", shape = "box"]
+		"[root] aws_subnet.private4 (expand)" [label = "aws_subnet.private4", shape = "box"]
+		"[root] aws_subnet.private5 (expand)" [label = "aws_subnet.private5", shape = "box"]
+		"[root] aws_subnet.private6 (expand)" [label = "aws_subnet.private6", shape = "box"]
+		"[root] aws_subnet.public1 (expand)" [label = "aws_subnet.public1", shape = "box"]
+		"[root] aws_subnet.public2 (expand)" [label = "aws_subnet.public2", shape = "box"]
+		"[root] aws_vpc.test (expand)" [label = "aws_vpc.test", shape = "box"]
+		"[root] data.aws_ami.app_ami (expand)" [label = "data.aws_ami.app_ami", shape = "box"]
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"]" [label = "provider[\"registry.terraform.io/hashicorp/aws\"]", shape = "diamond"]
+		"[root] var.ami" [label = "var.ami", shape = "note"]
+		"[root] var.db_instance_class" [label = "var.db_instance_class", shape = "note"]
+		"[root] var.engine" [label = "var.engine", shape = "note"]
+		"[root] var.engine_version" [label = "var.engine_version", shape = "note"]
+		"[root] var.instance_type" [label = "var.instance_type", shape = "note"]
+		"[root] var.subnet_cidrs" [label = "var.subnet_cidrs", shape = "note"]
+		"[root] var.vpc_cidr" [label = "var.vpc_cidr", shape = "note"]
+		"[root] aws_autoscaling_attachment.gogreen (expand)" -> "[root] aws_autoscaling_group.gogreen (expand)"
+		"[root] aws_autoscaling_attachment.gogreen (expand)" -> "[root] aws_lb_target_group.test (expand)"
+		"[root] aws_autoscaling_group.gogreen (expand)" -> "[root] aws_launch_template.greenLT (expand)"
+		"[root] aws_autoscaling_group.gogreen (expand)" -> "[root] aws_subnet.private1 (expand)"
+		"[root] aws_autoscaling_group.gogreen (expand)" -> "[root] aws_subnet.private3 (expand)"
+		"[root] aws_cloudfront_distribution.my_distribution (expand)" -> "[root] aws_lb.test (expand)"
+		"[root] aws_cloudfront_distribution.my_distribution (expand)" -> "[root] local.my_origin_id (expand)"
+		"[root] aws_cloudwatch_metric_alarm.CPU-alarm (expand)" -> "[root] aws_autoscaling_group.gogreen (expand)"
+		"[root] aws_cloudwatch_metric_alarm.CPU-alarm (expand)" -> "[root] aws_sns_topic.CPU-SMS-EMAIL (expand)"
+		"[root] aws_db_instance.default (expand)" -> "[root] aws_db_subnet_group.DBSubnetGroup (expand)"
+		"[root] aws_db_instance.default (expand)" -> "[root] aws_security_group.database-sg (expand)"
+		"[root] aws_db_instance.default (expand)" -> "[root] var.db_instance_class"
+		"[root] aws_db_instance.default (expand)" -> "[root] var.engine"
+		"[root] aws_db_instance.default (expand)" -> "[root] var.engine_version"
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" -> "[root] aws_subnet.private2 (expand)"
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" -> "[root] aws_subnet.private3 (expand)"
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" -> "[root] aws_subnet.private4 (expand)"
+		"[root] aws_db_subnet_group.DBSubnetGroup (expand)" -> "[root] aws_subnet.private6 (expand)"
+		"[root] aws_eip.lb (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_access_key.dbadmin1 (expand)" -> "[root] aws_iam_user.dbadmin1 (expand)"
+		"[root] aws_iam_access_key.dbadmin2 (expand)" -> "[root] aws_iam_user.dbadmin2 (expand)"
+		"[root] aws_iam_access_key.sysadmin1 (expand)" -> "[root] aws_iam_user.sysadmin1 (expand)"
+		"[root] aws_iam_access_key.sysadmin2 (expand)" -> "[root] aws_iam_user.sysadmin2 (expand)"
+		"[root] aws_iam_account_password_policy.strict (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_group.DBAdmin (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_group.Monitor (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_group.SysAdmin (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_group_policy.DBAdmin (expand)" -> "[root] aws_iam_group.SysAdmin (expand)"
+		"[root] aws_iam_group_policy.SysAdmin (expand)" -> "[root] aws_iam_group.SysAdmin (expand)"
+		"[root] aws_iam_instance_profile.s3_profile (expand)" -> "[root] aws_iam_role.s3access_role (expand)"
+		"[root] aws_iam_role.s3access_role (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_role_policy.s3_policy (expand)" -> "[root] aws_iam_role.s3access_role (expand)"
+		"[root] aws_iam_user.dbadmin1 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.dbadmin2 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.monitoruser1 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.monitoruser2 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.monitoruser3 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.monitoruser4 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.sysadmin1 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_iam_user.sysadmin2 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_internet_gateway.gw (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_launch_template.greenLT (expand)" -> "[root] aws_iam_instance_profile.s3_profile (expand)"
+		"[root] aws_launch_template.greenLT (expand)" -> "[root] aws_security_group.web-sg (expand)"
+		"[root] aws_launch_template.greenLT (expand)" -> "[root] data.aws_ami.app_ami (expand)"
+		"[root] aws_launch_template.greenLT (expand)" -> "[root] var.instance_type"
+		"[root] aws_lb.test (expand)" -> "[root] aws_security_group.elb-sg (expand)"
+		"[root] aws_lb.test (expand)" -> "[root] aws_subnet.public1 (expand)"
+		"[root] aws_lb.test (expand)" -> "[root] aws_subnet.public2 (expand)"
+		"[root] aws_lb_listener.front_end (expand)" -> "[root] aws_lb.test (expand)"
+		"[root] aws_lb_listener.front_end (expand)" -> "[root] aws_lb_target_group.test (expand)"
+		"[root] aws_lb_target_group.test (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_nat_gateway.gogreen_ng (expand)" -> "[root] aws_eip.lb (expand)"
+		"[root] aws_nat_gateway.gogreen_ng (expand)" -> "[root] aws_internet_gateway.gw (expand)"
+		"[root] aws_nat_gateway.gogreen_ng (expand)" -> "[root] aws_subnet.public1 (expand)"
+		"[root] aws_route_table.ng-rt (expand)" -> "[root] aws_nat_gateway.gogreen_ng (expand)"
+		"[root] aws_route_table.public-rt (expand)" -> "[root] aws_internet_gateway.gw (expand)"
+		"[root] aws_route_table_association.ngw-rt-as (expand)" -> "[root] aws_route_table.ng-rt (expand)"
+		"[root] aws_route_table_association.ngw-rt-as (expand)" -> "[root] aws_subnet.private1 (expand)"
+		"[root] aws_route_table_association.ngw-rt-as2 (expand)" -> "[root] aws_route_table.ng-rt (expand)"
+		"[root] aws_route_table_association.ngw-rt-as2 (expand)" -> "[root] aws_subnet.private2 (expand)"
+		"[root] aws_route_table_association.pub-sub1-rta (expand)" -> "[root] aws_route_table.public-rt (expand)"
+		"[root] aws_route_table_association.pub-sub1-rta (expand)" -> "[root] aws_subnet.public1 (expand)"
+		"[root] aws_route_table_association.pub-sub2-rta (expand)" -> "[root] aws_route_table.public-rt (expand)"
+		"[root] aws_route_table_association.pub-sub2-rta (expand)" -> "[root] aws_subnet.public2 (expand)"
+		"[root] aws_s3_bucket.gogreens3 (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_security_group.database-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_security_group.elb-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_security_group.web-sg (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_sns_topic.CPU-SMS-EMAIL (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] aws_sns_topic_subscription.cpu-email (expand)" -> "[root] aws_sns_topic.CPU-SMS-EMAIL (expand)"
+		"[root] aws_sns_topic_subscription.cpu-sms (expand)" -> "[root] aws_sns_topic.CPU-SMS-EMAIL (expand)"
+		"[root] aws_subnet.private1 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private1 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.private2 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private2 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.private3 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private3 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.private4 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private4 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.private5 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private5 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.private6 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.private6 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.public1 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.public1 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_subnet.public2 (expand)" -> "[root] aws_vpc.test (expand)"
+		"[root] aws_subnet.public2 (expand)" -> "[root] var.subnet_cidrs"
+		"[root] aws_vpc.test (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] data.aws_ami.app_ami (expand)" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"]"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_autoscaling_attachment.gogreen (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_cloudfront_distribution.my_distribution (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_cloudwatch_metric_alarm.CPU-alarm (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_db_instance.default (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_access_key.dbadmin1 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_access_key.dbadmin2 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_access_key.sysadmin1 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_access_key.sysadmin2 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_account_password_policy.strict (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_group.DBAdmin (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_group.Monitor (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_group_policy.DBAdmin (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_group_policy.SysAdmin (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_role_policy.s3_policy (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_user.monitoruser1 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_user.monitoruser2 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_user.monitoruser3 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_iam_user.monitoruser4 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_lb_listener.front_end (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.ngw-rt-as (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.ngw-rt-as2 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.pub-sub1-rta (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_route_table_association.pub-sub2-rta (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_s3_bucket.gogreens3 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_sns_topic_subscription.cpu-email (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_sns_topic_subscription.cpu-sms (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] aws_subnet.private5 (expand)"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.ami"
+		"[root] meta.count-boundary (EachMode fixup)" -> "[root] var.vpc_cidr"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_autoscaling_attachment.gogreen (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_cloudfront_distribution.my_distribution (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_cloudwatch_metric_alarm.CPU-alarm (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_db_instance.default (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_access_key.dbadmin1 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_access_key.dbadmin2 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_access_key.sysadmin1 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_access_key.sysadmin2 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_account_password_policy.strict (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_group.DBAdmin (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_group.Monitor (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_group_policy.DBAdmin (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_group_policy.SysAdmin (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_role_policy.s3_policy (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_user.monitoruser1 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_user.monitoruser2 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_user.monitoruser3 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_iam_user.monitoruser4 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_lb_listener.front_end (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.ngw-rt-as (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.ngw-rt-as2 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.pub-sub1-rta (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_route_table_association.pub-sub2-rta (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_s3_bucket.gogreens3 (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_sns_topic_subscription.cpu-email (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_sns_topic_subscription.cpu-sms (expand)"
+		"[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)" -> "[root] aws_subnet.private5 (expand)"
+		"[root] root" -> "[root] meta.count-boundary (EachMode fixup)"
+		"[root] root" -> "[root] provider[\"registry.terraform.io/hashicorp/aws\"] (close)"
+	}
+}
+
