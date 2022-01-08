@@ -11,7 +11,6 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot    = true
   multi_az               = true
   port = 3306
-  storage_encrypted = "false"
 
   db_subnet_group_name   = aws_db_subnet_group.DBSubnetGroup.name
   vpc_security_group_ids = ["${aws_security_group.database-sg.id}"]
