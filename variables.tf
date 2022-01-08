@@ -26,3 +26,10 @@ variable "engine_version" {
 
 }
 
+variable "team-emails" {
+  type =map(string)
+}
+
+variable "team-phones" {
+  type =map(number)
+}
