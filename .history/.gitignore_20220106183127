@@ -1,4 +1,0 @@
-.terraform*
-dbpassword.txt
-terraform.tfstate
-terraform.tfstate.backup
