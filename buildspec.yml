@@ -1,0 +1,14 @@
+version: 0.2 
+ 
+phases: 
+   build: 
+    commands: 
+      - echo Compiling has started 
+      - echo Compiling the userdata code... 
+      - ./userdata.sh 
+  post_build: 
+    commands: 
+      - echo Compiling process has been completed 
+artifacts: 
+  files: 
+    - userdata.sh
