@@ -1,7 +1,10 @@
 terraform {
-  backend "s3" {
-    bucket = "cc-remote-backend"
-    key    = "remotestate.tfstate"
-    region = "us-west-1"
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "12345"
+
+    workspaces {
+      name = "CloudCrowd"
+    }
   }
 }
