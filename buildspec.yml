@@ -8,7 +8,6 @@ phases:
     commands: 
       - echo Compiling has started 
       - echo Compiling the PHP code... 
-      - python HelloWorld.py 
       - ./userdata.sh
   post_build: 
     commands: 
