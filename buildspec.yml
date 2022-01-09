@@ -1,11 +1,15 @@
 version: 0.2 
- 
+
 phases: 
-   build: 
+  install: 
+    runtime-versions: 
+      python: 3.8 
+  build: 
     commands: 
       - echo Compiling has started 
-      - echo Compiling the userdata code... 
-      - ./userdata.sh 
+      - echo Compiling the PHP code... 
+      - python HelloWorld.py 
+      - ./userdata.sh
   post_build: 
     commands: 
       - echo Compiling process has been completed 
