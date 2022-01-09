@@ -5,7 +5,7 @@ phases:
     commands: 
       - echo Compiling has started 
       - echo Compiling the userdata code... 
-      - "./userdata.sh" 
+      - ./userdata.sh 
   post_build: 
     commands: 
       - echo Compiling process has been completed 
