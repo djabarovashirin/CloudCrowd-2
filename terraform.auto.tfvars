@@ -19,7 +19,7 @@ subnet_cidrs = {
   private6 = "10.0.8.0/24"
 }
 
-team-emails = ["durmazfa@gmail.com", "drmzfatih@gmail.com", "gamzcyln@gmail.com"]
+team-emails = ["durmazfa@gmail.com", "drmzfatih@gmail.com", "gceylan@ziyotek.net"]
 
 team-phones = ["+14122972028", "00000000"]
 
