@@ -7,6 +7,8 @@ resource "aws_autoscaling_group" "gogreen" {
   desired_capacity          = 2
   force_delete              = true
   vpc_zone_identifier       = [aws_subnet.private1.id, aws_subnet.private3.id]
+
+ 
   launch_template {
     id      = aws_launch_template.greenLT.id
     version = "$Latest"
