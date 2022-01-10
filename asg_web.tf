@@ -2,7 +2,7 @@ resource "aws_autoscaling_group" "gogreen" {
   name                      = "gogreen_asg"
   max_size                  = 2
   min_size                  = 2
-  health_check_grace_period = 300
+  health_check_grace_period = 350
   health_check_type         = "ELB"
   desired_capacity          = 2
   force_delete              = true

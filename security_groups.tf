@@ -78,3 +78,30 @@ resource "aws_security_group" "database-sg" {
     Name = "database-sg"
   }
 }
+
+
+
+resource "aws_security_group" "elb-sg-private" {
+  name        = "elb-sg-private"
+  description = "Allow Access to ELB from VPC"
+  vpc_id      = aws_vpc.test.id
+
+  ingress {
+    description = "HTTP from VPC"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    security_groups = ["${aws_security_group.elb-sg.id}"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "elb-sg-private"
+  }
+}
