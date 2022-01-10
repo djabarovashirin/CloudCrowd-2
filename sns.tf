@@ -5,10 +5,11 @@ resource "aws_sns_topic" "CPU-SMS-EMAIL" {
 resource "aws_sns_topic_subscription" "cpu-email" {
   topic_arn = aws_sns_topic.CPU-SMS-EMAIL.arn
   protocol  = "email"
-  endpoint  = file("./emails.txt")
+  count = 2
+  endpoint  = var.team-emails[count.index]
 }
 resource "aws_sns_topic_subscription" "cpu-sms" {
   topic_arn = aws_sns_topic.CPU-SMS-EMAIL.arn
   protocol  = "sms"
-  endpoint  = file("./phones.txt")
+  endpoint  = var.team-phones[0]
 }

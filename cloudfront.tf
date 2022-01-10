@@ -9,7 +9,7 @@ resource "aws_cloudfront_distribution" "my_distribution" {
     custom_origin_config {
       http_port              = "80"
       https_port             = "443"
-      origin_protocol_policy = "https-only"
+      origin_protocol_policy = "http-only"
       origin_ssl_protocols   = ["TLSv1"]
     }
   }
@@ -43,7 +43,7 @@ resource "aws_cloudfront_distribution" "my_distribution" {
   viewer_certificate {
     cloudfront_default_certificate = false
     ssl_support_method             = "sni-only"
-    acm_certificate_arn            = "arn:aws:acm:us-west-1:710242627084:certificate/4183d3e0-708a-4f08-91cd-6180d105a974"
+    acm_certificate_arn            = "arn:aws:acm:us-east-1:710242627084:certificate/6320b13a-6095-469e-aae3-9880052fdf3d"
     minimum_protocol_version       = "TLSv1.2_2018"
   }
 }

@@ -18,7 +18,7 @@ EOF
 
 resource "aws_iam_group_policy" "DBAdmin" {
   name  = "DBAdmin"
-  group = aws_iam_group.SysAdmin.name
+  group = aws_iam_group.DBAdmin.name
 
   policy = <<EOF
 {

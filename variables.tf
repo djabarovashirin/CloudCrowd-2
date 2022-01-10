@@ -27,9 +27,9 @@ variable "engine_version" {
 }
 
 variable "team-emails" {
-  type =map(string)
+  type = list(string)
 }
 
 variable "team-phones" {
-  type =map(number)
+  type = list(number)
 }
