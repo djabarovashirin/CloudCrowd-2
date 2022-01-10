@@ -5,5 +5,8 @@ resource "aws_lb_target_group" "test" {
   vpc_id      = aws_vpc.test.id
   target_type = "instance"
   slow_start= 120
+  inteval = 120
+  healthy_threshold = 10
+  timeout = 119
 }
 
