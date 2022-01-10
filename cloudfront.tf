@@ -1,5 +1,3 @@
-# #CREATE CLOUDFRONT DISTRIBUTION
-
 locals {
   my_origin_id = "my-origin"
 }
