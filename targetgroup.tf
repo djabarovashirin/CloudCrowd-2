@@ -4,7 +4,7 @@ resource "aws_lb_target_group" "test" {
   protocol    = "HTTP"
   vpc_id      = aws_vpc.test.id
   target_type = "instance"
- health_check {
+  health_check {
     protocol            = "HTTP"
     path                = "/"
     healthy_threshold   = 2
